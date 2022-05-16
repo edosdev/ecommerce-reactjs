@@ -1,0 +1,25 @@
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    colors: {
+      transparent: "transparent",
+      current: "currentColor",
+      color1: "#BF0615",
+      color2: "#F2E41D",
+      color3: "#F2BD1D",
+      color4: "#D95F18",
+      color5: "#F2F2F2",
+      color6: "#730E16",
+      white: "#ffffff",
+      purple: "#3f3cbb",
+      midnight: "#121063",
+      metal: "#565584",
+      tahiti: "#3ab7bf",
+      silver: "#ecebff",
+      "bubble-gum": "#ff77e9",
+      bermuda: "#78dcca",
+    },
+    extend: {},
+  },
+  plugins: [],
+};
