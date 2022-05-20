@@ -5,3 +5,8 @@
 .logo {
   width: 100%;
 }
+@media (min-width: 1024px) {
+  .menu-mobile {
+    order: 10;
+} 
+}
