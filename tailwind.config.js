@@ -1,25 +1,34 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          primary: "#BF0615",
+
+          secondary: "#F2E41D",
+
+          accent: "#D95F18",
+
+          neutral: "#191D24",
+
+          "base-100": "#fff",
+
+          info: "#3ABFF8",
+
+          success: "#36D399",
+
+          warning: "#FBBD23",
+
+          error: "#F87272",
+
+          white: "#fff"
+        },
+      },
+    ],
+  },
   theme: {
-    colors: {
-      transparent: "transparent",
-      current: "currentColor",
-      color1: "#BF0615",
-      color2: "#F2E41D",
-      color3: "#F2BD1D",
-      color4: "#D95F18",
-      color5: "#F2F2F2",
-      color6: "#730E16",
-      white: "#ffffff",
-      purple: "#3f3cbb",
-      midnight: "#121063",
-      metal: "#565584",
-      tahiti: "#3ab7bf",
-      silver: "#ecebff",
-      "bubble-gum": "#ff77e9",
-      bermuda: "#78dcca",
-    },
     extend: {},
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };

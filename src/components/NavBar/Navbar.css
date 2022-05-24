@@ -1,12 +1,16 @@
  .logo-container {
-  width: 150px;
+  width: 120px;
 }
 
 .logo {
   width: 100%;
 }
+
 @media (min-width: 1024px) {
   .menu-mobile {
     order: 10;
 } 
+#menu {
+  text-align: left;
+}
 }

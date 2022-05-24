@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav class="flex items-center justify-between flex-wrap bg-color6 p-6">
+      <nav class="flex items-center justify-between flex-wrap bg-primary p-6">
         <div class=" logo-container flex items-center flex-shrink-0 text-white mr-6">
           <img class="logo" src="./logo-pizzatop.png" alt="description" />
         </div>
@@ -46,7 +46,7 @@ const Navbar = () => {
             </a>
           </div>
           <div>
-            <a href="#sas" class="inline-block text-sm px-10 py-4 leading-none border rounded text-white border-white hover:border-transparent hover:text-color1 hover:bg-white mt-4 lg:mt-0">
+            <a href="#sas" class="inline-block text-sm px-10 py-4 leading-none border rounded text-white border-white hover:border-transparent hover:text-primary hover:bg-white mt-4 lg:mt-0">
               Contactos
             </a>
           </div>
