@@ -17,8 +17,8 @@ import CartWidget  from "../Cart/CarWidget.js";
 const Navbar = () => {
 
   return (
-    <header>
-      <nav class="flex items-center justify-between flex-wrap bg-primary p-6">
+    <header className="bg-primary">
+      <nav class="flex container items-center justify-between flex-wrap p-6 mx-auto">
         <div class=" logo-container flex items-center flex-shrink-0 text-white mr-6">
           <img class="logo" src="./logo-pizzatop.png" alt="description" />
         </div>

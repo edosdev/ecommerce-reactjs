@@ -1,0 +1,8 @@
+.tamano-contenedor {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.tamano-contenedor > input[type="radio"] {
+  margin-right: 0.5rem
+}
