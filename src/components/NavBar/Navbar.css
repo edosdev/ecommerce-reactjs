@@ -1,5 +1,13 @@
+ header {
+
+/* opacity: 1;
+background: repeating-linear-gradient( 45deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 5px, rgba(255, 255, 255, 0) 5px, rgba(255, 255, 255, 0) 25px ); */
+ }
+ 
  .logo-container {
   width: 120px;
+  background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 67%);
 }
 
 .logo {
