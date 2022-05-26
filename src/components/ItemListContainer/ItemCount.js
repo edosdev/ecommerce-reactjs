@@ -13,8 +13,9 @@ const ItemCount = ({stock, initial}) => {
     }
   };
   const incremento = () => {
-    if (count < 100) {
+    if (count < stock) {
       setCount(count + 1);
+
     }
   };
     const onAdd = () => {
