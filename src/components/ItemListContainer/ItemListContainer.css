@@ -6,3 +6,12 @@
 .tamano-contenedor > input[type="radio"] {
   margin-right: 0.5rem
 }
+
+.precio {
+  align-self: end
+}
+.precio span {
+  font-weight: bold;
+  font-size: 1.1rem;
+
+}

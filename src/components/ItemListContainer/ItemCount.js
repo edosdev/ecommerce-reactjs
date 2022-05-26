@@ -3,9 +3,9 @@ import React, { useState } from "react";
 
 
 
-const ItemCount = () => {
-  
-  const [count, setCount] = useState(1);
+const ItemCount = ({stock, initial}) => {
+ 
+  const [count, setCount] = useState(initial);
 
   const decremento = () => {
     if (count > 0) {
@@ -17,6 +17,9 @@ const ItemCount = () => {
       setCount(count + 1);
     }
   };
+    const onAdd = () => {
+      console.log(" Se agrego el Producto la cantidad de " + count);
+    };
 
   return (
     <>
@@ -25,12 +28,15 @@ const ItemCount = () => {
           <button className="btn btn-neutro font-bold text-white" onClick={decremento}>
             -
           </button>
-          <input type="text" className="w-10 text-accent text-center  font-semibold focus:outline-none" pattern="[0-9]*\.?[0-9]*" value={count} />
+          <input type="text" className="w-10 text-accent text-center  font-semibold focus:outline-none" max-value={stock} pattern="[0-9]*\.?[0-9]*" value={count} />
+
           <button className="btn btn-neutro font-bold text-white" onClick={incremento}>
             +
           </button>
         </div>
-        <button class="btn btn-primary text-white">Agregar al Carrito</button>
+        <button class="btn btn-primary text-white" onClick={onAdd()}>
+          Agregar al Carrito
+        </button>
       </div>
     </>
   );

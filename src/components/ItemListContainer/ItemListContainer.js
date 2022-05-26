@@ -3,6 +3,7 @@ import ItemCount from "./ItemCount"
 
 const ItemListContainer = () => {
   // Create a new ItemListContainer
+
   return (
     <>
       <div className="flex gap-4 ">
@@ -14,8 +15,8 @@ const ItemListContainer = () => {
           <div class="card-body">
             <h2 class="card-title">Producto</h2>
             <p className="text-left">Descripción del Producto</p>
-            <div class="text-left">
-              <form method="post" action>
+            <div class="flex w-100">
+              <form className="text-left w-3/5" method="post" action>
                 <div className="tamano-contenedor">
                   <input class="radio radio-primary" type="radio" id="personal" name="tamano" /> Personal
                 </div>
@@ -29,9 +30,12 @@ const ItemListContainer = () => {
                   <input class="radio radio-primary" type="radio" id="extra-grande" name="tamano" /> Extra Grande
                 </div>
               </form>
+              <div className="precio text-right w-2/5">
+                <span>Desde $7.000</span>
+              </div>
             </div>
             {/* Contador */}
-            <ItemCount />
+            <ItemCount stock={5} initial={1} onAdd />
             {/* END Contador */}
             <div className=" text-neutral font-bold mt-4">
               <a href="google.com">Ver Mas Información</a>
