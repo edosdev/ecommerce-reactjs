@@ -35,7 +35,7 @@ const ItemListContainer = () => {
               </div>
             </div>
             {/* Contador */}
-            <ItemCount stock={5} initial={1} onAdd />
+            <ItemCount stock={5} initial={1} />
             {/* END Contador */}
             <div className=" text-neutral font-bold mt-4">
               <a href="google.com">Ver Mas Información</a>

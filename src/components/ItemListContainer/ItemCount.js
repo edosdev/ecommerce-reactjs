@@ -29,13 +29,13 @@ const ItemCount = ({stock, initial}) => {
           <button className="btn btn-neutro font-bold text-white" onClick={decremento}>
             -
           </button>
-          <input type="text" className="w-10 text-accent text-center  font-semibold focus:outline-none" max-value={stock} pattern="[0-9]*\.?[0-9]*" value={count} />
+          <input type="text" className="w-10 text-accent text-center  font-semibold focus:outline-none" pattern="[0-9]*\.?[0-9]*" value={count} />
 
           <button className="btn btn-neutro font-bold text-white" onClick={incremento}>
             +
           </button>
         </div>
-        <button class="btn btn-primary text-white" onClick={onAdd()}>
+        <button class="btn btn-primary text-white" onClick={onAdd}>
           Agregar al Carrito
         </button>
       </div>
