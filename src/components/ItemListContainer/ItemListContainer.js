@@ -8,26 +8,26 @@ const ItemListContainer = () => {
     <>
       <div className="flex gap-4 ">
         {/* Card de Producto */}
-        <div class="card w-96 bg-base-100 shadow-xl">
+        <div className="card w-96 bg-base-100 shadow-xl">
           <figure>
             <img src="https://api.lorem.space/image/pizza?w=400&h=225" alt="Shoes" />
           </figure>
-          <div class="card-body">
-            <h2 class="card-title">Producto</h2>
+          <div className="card-body">
+            <h2 className="card-title">Producto</h2>
             <p className="text-left">Descripción del Producto</p>
             <div class="flex w-100">
               <form className="text-left w-3/5" method="post" action>
                 <div className="tamano-contenedor">
-                  <input class="radio radio-primary" type="radio" id="personal" name="tamano" /> Personal
+                  <input class="radio radio-primary" type="radio" id="personal" name="tamano"  checked/> Personal
                 </div>
                 <div className="tamano-contenedor">
                   <input class="radio radio-primary" type="radio" id="mediana" name="tamano" /> Mediana
                 </div>
                 <div className="tamano-contenedor">
-                  <input class="radio radio-primary" type="radio" id="familiar" name="tamano" /> Familiar
+                  <input className="radio radio-primary" type="radio" id="familiar" name="tamano" /> Familiar
                 </div>
                 <div className="tamano-contenedor">
-                  <input class="radio radio-primary" type="radio" id="extra-grande" name="tamano" /> Extra Grande
+                  <input className="radio radio-primary" type="radio" id="extra-grande" name="tamano" /> Extra Grande
                 </div>
               </form>
               <div className="precio text-right w-2/5">

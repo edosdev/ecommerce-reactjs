@@ -24,7 +24,7 @@ const ItemCount = ({stock, initial}) => {
 
   return (
     <>
-      <div class="card-actions justify-between items-center mt-5">
+      <div className="card-actions justify-between items-center mt-5">
         <div className="flex w-100 items-center">
           <button className="btn btn-neutro font-bold text-white" onClick={decremento}>
             -
@@ -35,7 +35,7 @@ const ItemCount = ({stock, initial}) => {
             +
           </button>
         </div>
-        <button class="btn btn-primary text-white" onClick={onAdd}>
+        <button className="btn btn-primary text-white" onClick={onAdd}>
           Agregar al Carrito
         </button>
       </div>
