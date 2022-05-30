@@ -38,7 +38,7 @@ const Navbar = () => {
             <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:font-bold text-white mr-4 ">
               Menu
             </a>
-            <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:font-bold text-white mr-4 ">
+            <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:font-bold text-white mr-4  ">
               Promociones
             </a>
             <a href="#ss" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:font-bold text-white mr-4 ">
@@ -46,7 +46,7 @@ const Navbar = () => {
             </a>
           </div>
           <div>
-            <a href="#sas" className="inline-block text-sm px-10 py-4 leading-none border rounded text-white border-white hover:border-transparent hover:text-primary hover:bg-white mt-4 lg:mt-0">
+            <a href="#sas" className=" btn btn-secondary inline-block text-sm px-10 py-4 leading-none rounded  text-neutral font-bold uppercase  mt-4 lg:mt-0">
               Contactos
             </a>
           </div>
