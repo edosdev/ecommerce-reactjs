@@ -33,12 +33,26 @@ const ItemList = () => {
       });
   }, []);
 
-
   return (
     <>
+
       {products.map((producto) => {
+
         console.log("este es el producto: ", producto);
-        return <Item titulo={producto.titulo} descripcion={producto.descripcion} imagen={producto.imagen} precio_final={producto.precio_final} stock={producto.stock} tamano={producto.tamano[1]} ></Item>;
+        return (
+          <Item
+            titulo={producto.titulo}
+            descripcion={producto.descripcion}
+            imagen={producto.imagen}
+            precio_final={producto.precio_final}
+            stock={producto.stock}
+            tamano={producto.tamano.map((t) => (
+              <div className="tamano-contenedor">
+                <input class="radio radio-primary" type="radio" id={t.name} name="tamano" value={t.price}/> {t.name}
+              </div>
+            ))}
+          ></Item>
+        );
       })}
     </>
   );
