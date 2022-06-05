@@ -1,7 +1,8 @@
 import './App.css';
 import './index.css'
 import Navbar from './components/NavBar/NavBar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailConatiner from './components/ItemDetailContainer/ItemDetailContainer';
+// import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 // import Modal from './components/Modal/Modal';
 
 function App() {
@@ -9,9 +10,9 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="container mx-auto mt-10">
-        <ItemListContainer />
+        {/* <ItemListContainer /> */}
         {/* <Modal /> */}
-
+        <ItemDetailConatiner />
       </div>
     </div>
   );

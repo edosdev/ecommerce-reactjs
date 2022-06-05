@@ -3,7 +3,9 @@ import Item from "./Item";
 import productos from "../../utils/productos-mock";
 
 const ItemList = () => {
+
   const [products, setProducts] = useState([]);
+  
   const getProducts = () => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -33,12 +35,13 @@ const ItemList = () => {
       });
   }, []);
 
+
   return (
     <>
 
       {products.map((producto) => {
 
-        console.log("este es el producto: ", producto);
+        // console.log("este es el producto: ", producto);
         return (
           <Item
             titulo={producto.titulo}
@@ -48,7 +51,7 @@ const ItemList = () => {
             stock={producto.stock}
             tamano={producto.tamano.map((t) => (
               <div className="tamano-contenedor">
-                <input class="radio radio-primary" type="radio" id={t.name} name="tamano" value={t.price}/> {t.name}
+                <input class="radio radio-primary" type="radio" id={t.name} name="tamano" value={t.price} /> {t.name}
               </div>
             ))}
           ></Item>

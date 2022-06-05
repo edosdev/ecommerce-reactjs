@@ -183,4 +183,34 @@ const productos = [
   },
 ];
 
+const producto = 
+  {
+    id: 1,
+    titulo: "Peperoni",
+    descripcion: "Descripción del Producto",
+    imagen: "/img-pizzas/p-peperoni.jpg",
+    precio_final: 0,
+    stock: 25,
+    tamano: [
+      {
+        name: "Personal",
+        price: 7000,
+      },
+      {
+        name: "Mediana",
+        price: 12000,
+      },
+      {
+        name: "Familiar",
+        price: 16000,
+      },
+      {
+        name: "Extra Grande",
+        price: 25000,
+      },
+    ],
+  }
+
+
 export default productos;
+export {producto};
