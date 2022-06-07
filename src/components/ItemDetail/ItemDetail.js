@@ -1,3 +1,5 @@
+import ItemCount from "../Items/ItemCount";
+
 const ItemDetail = ({ data, ptamano }) => {
   return (
     <>
@@ -10,10 +12,8 @@ const ItemDetail = ({ data, ptamano }) => {
           <h1 className="text-2xl font-extrabold">{data.titulo}</h1>
           <p>{data.descripcion}</p>
           <price> {data.precio_final}</price>
+          <ItemCount stock={data.stock} initial={1} />
           {ptamano}
-          <div className="text-right">
-            <button className="btn btn-primary text-white text-right">Agregar al Carrito</button>
-          </div>
         </div>
       </div>
     </>
