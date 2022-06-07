@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react";
 import Item from "./Item";
 import productos from "../../utils/productos-mock";
+import { capitalize } from "@mui/material";
 
-const ItemList = () => {
-
+const ItemList = ({ filtrocat }) => {
+  console.log("ejecutando filtro", filtrocat);
   const [products, setProducts] = useState([]);
-  
+  const [filtroCategoria, setCategoria] = useState([]);
   const getProducts = () => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (productos) {
           resolve(productos);
-        }else {
+        } else {
           reject("error en llamada de la API");
         }
       }, 2000);
@@ -23,7 +24,11 @@ const ItemList = () => {
     getProducts()
       .then((response) => {
         // console.log("Respuesta de la Promesa: ", response);
-        setProducts(response);
+        if (filtrocat) {
+          setCategoria(response);
+        } else {
+          setProducts(response);
+        }
       })
 
       .catch((err) => {
@@ -33,17 +38,25 @@ const ItemList = () => {
         // setLoader(false);
         // console.log("Cargo Todo");
       });
-  }, []);
+  }, [filtrocat]);
+
 
 
   return (
+    
     <>
 
+      {filtroCategoria.find(
+        // eslint-disable-next-line
+        (b) => {
+        // eslint-disable-next-line
+        console.log(b.categoria == capitalize(filtrocat));
+      })}
       {products.map((producto) => {
-
         // console.log("este es el producto: ", producto);
         return (
           <Item
+            id={producto.id}
             titulo={producto.titulo}
             descripcion={producto.descripcion}
             imagen={producto.imagen}

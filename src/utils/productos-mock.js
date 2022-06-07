@@ -6,6 +6,7 @@ const productos = [
     imagen: "/img-pizzas/p-peperoni.jpg",
     precio_final: 0,
     stock: 25,
+    categoria: ["Eventos"],
     tamano: [
       {
         name: "Personal",
@@ -31,6 +32,7 @@ const productos = [
     descripcion: "Descripción del Producto",
     imagen: "/img-pizzas/p-diabla.jpg",
     precio_final: 0,
+    categoria: ["Picante", "Eventos"],
     stock: 14,
     tamano: [
       {
@@ -58,6 +60,7 @@ const productos = [
     imagen: "/img-pizzas/p-grecia.jpg",
     precio_final: 0,
     stock: 12,
+    categoria: ["Eventos"],
     tamano: [
       {
         name: "Personal",
@@ -84,6 +87,7 @@ const productos = [
     imagen: "/img-pizzas/p-peter.jpg",
     precio_final: 0,
     stock: 5,
+    categoria: ["Vegetariano", "Eventos"],
     tamano: [
       {
         name: "Personal",
@@ -110,6 +114,7 @@ const productos = [
     imagen: "/img-pizzas/p-pizzatop.jpg",
     precio_final: 0,
     stock: 25,
+    categoria: ["Eventos"],
     tamano: [
       {
         name: "Personal",
@@ -136,6 +141,7 @@ const productos = [
     imagen: "/img-pizzas/p-romana.jpg",
     precio_final: 0,
     stock: 25,
+    categoria: ["Vegetariano"],
     tamano: [
       {
         name: "Personal",
@@ -162,6 +168,7 @@ const productos = [
     imagen: "/img-pizzas/p-toscana.jpg",
     precio_final: 0,
     stock: 25,
+    categoria: ["Vegetariano"],
     tamano: [
       {
         name: "Personal",
@@ -183,34 +190,34 @@ const productos = [
   },
 ];
 
-const producto = 
-  {
-    id: 1,
-    titulo: "Peperoni",
-    descripcion: "Descripción del Producto",
-    imagen: "/img-pizzas/p-peperoni.jpg",
-    precio_final: 0,
-    stock: 25,
-    tamano: [
-      {
-        name: "Personal",
-        price: 7000,
-      },
-      {
-        name: "Mediana",
-        price: 12000,
-      },
-      {
-        name: "Familiar",
-        price: 16000,
-      },
-      {
-        name: "Extra Grande",
-        price: 25000,
-      },
-    ],
-  }
+// const producto = 
+//   {
+//     id: 1,
+//     titulo: "Peperoni",
+//     descripcion: "Descripción del Producto",
+//     imagen: "/img-pizzas/p-peperoni.jpg",
+//     precio_final: 0,
+//     stock: 25,
+//     tamano: [
+//       {
+//         name: "Personal",
+//         price: 7000,
+//       },
+//       {
+//         name: "Mediana",
+//         price: 12000,
+//       },
+//       {
+//         name: "Familiar",
+//         price: 16000,
+//       },
+//       {
+//         name: "Extra Grande",
+//         price: 25000,
+//       },
+//     ],
+//   }
 
 
 export default productos;
-export {producto};
+// export {producto};

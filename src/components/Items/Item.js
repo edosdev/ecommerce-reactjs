@@ -1,7 +1,10 @@
 import './item.css'
 import ItemCount from "./ItemCount";
+import {Link} from 'react-router-dom'
 
-const Item = ({ titulo, descripcion, imagen, precio_final, stock, tamano }) => {
+const Item = ({ id, titulo, descripcion, imagen, precio_final, stock, tamano }) => {
+
+  // console.log("el id de producto", id)
 
   return (
     <div className="card w-100 bg-base-100 shadow-xl">
@@ -18,10 +21,10 @@ const Item = ({ titulo, descripcion, imagen, precio_final, stock, tamano }) => {
           <div className="precio text-right w-2/5">
             <span>{precio_final}</span>
           </div>
-        </div>
+        </div> 
         <ItemCount stock={stock} initial={1} />
         <div className=" text-neutral font-bold mt-4">
-          <a href="google.com">Ver Mas Información</a>
+          <Link to={`/producto/${id}`}>Ver Mas Información</Link>
         </div>
       </div>
     </div>
