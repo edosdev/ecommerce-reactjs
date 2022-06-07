@@ -6,7 +6,7 @@ const productos = [
     imagen: "/img-pizzas/p-peperoni.jpg",
     precio_final: 0,
     stock: 25,
-    categoria: ["Eventos"],
+    categoria: ["vegetariano"],
     tamano: [
       {
         name: "Personal",
@@ -32,8 +32,8 @@ const productos = [
     descripcion: "Descripción del Producto",
     imagen: "/img-pizzas/p-diabla.jpg",
     precio_final: 0,
-    categoria: ["Picante", "Eventos"],
     stock: 14,
+    categoria: ["eventos", "picante", "vegetariano"],
     tamano: [
       {
         name: "Personal",
@@ -60,7 +60,7 @@ const productos = [
     imagen: "/img-pizzas/p-grecia.jpg",
     precio_final: 0,
     stock: 12,
-    categoria: ["Eventos"],
+    categoria: ["eventos"],
     tamano: [
       {
         name: "Personal",
@@ -87,7 +87,7 @@ const productos = [
     imagen: "/img-pizzas/p-peter.jpg",
     precio_final: 0,
     stock: 5,
-    categoria: ["Vegetariano", "Eventos"],
+    categoria: ["vegetariano", "eventos"],
     tamano: [
       {
         name: "Personal",
@@ -114,7 +114,7 @@ const productos = [
     imagen: "/img-pizzas/p-pizzatop.jpg",
     precio_final: 0,
     stock: 25,
-    categoria: ["Eventos"],
+    categoria: ["eventos"],
     tamano: [
       {
         name: "Personal",
@@ -141,7 +141,7 @@ const productos = [
     imagen: "/img-pizzas/p-romana.jpg",
     precio_final: 0,
     stock: 25,
-    categoria: ["Vegetariano"],
+    categoria: ["vegetariano"],
     tamano: [
       {
         name: "Personal",
@@ -168,7 +168,34 @@ const productos = [
     imagen: "/img-pizzas/p-toscana.jpg",
     precio_final: 0,
     stock: 25,
-    categoria: ["Vegetariano"],
+    categoria: ["vegetariano"],
+    tamano: [
+      {
+        name: "Personal",
+        price: 8000,
+      },
+      {
+        name: "Mediana",
+        price: 10000,
+      },
+      {
+        name: "Familiar",
+        price: 22000,
+      },
+      {
+        name: "Extra Grande",
+        price: 32000,
+      },
+    ],
+  },
+  {
+    id: 7,
+    titulo: "Italiana",
+    descripcion: "Descripción del Producto",
+    imagen: "/img-pizzas/p-italiana.jpg",
+    precio_final: 0,
+    stock: 25,
+    categoria: ["eventos"],
     tamano: [
       {
         name: "Personal",

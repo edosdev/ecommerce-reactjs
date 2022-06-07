@@ -5,7 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 const ItemDetailConatiner = () => {
   const { id } = useParams();
-
+  const {categoria } = useParams();
   const [producto, setproduct] = useState({});
   const navegador = useNavigate();
   // eslint-disable-next-line
@@ -15,11 +15,14 @@ const ItemDetailConatiner = () => {
     }
     setproduct(filtroProducto);
   });
+  
 // eslint-disable-next-line
   const filtroProducto = productos.find((producto) => {
     // eslint-disable-next-line
-    return producto.id == id;
+    return producto.id == id || producto.categoria == categoria;
   });
+
+  
 
   // const getItem = () => {
   //   return new Promise((resolve, reject) => {
