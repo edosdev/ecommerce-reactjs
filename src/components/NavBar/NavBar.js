@@ -1,26 +1,24 @@
+import "./Navbar.css";
+import CartWidget from "../Cart/CarWidget.js";
+import { Link } from "react-router-dom";
 
-import './Navbar.css'
-import CartWidget  from "../Cart/CarWidget.js";
-
-
-  const evento_menu = () => {
-    const menu = document.querySelector("#menu");
-       if (menu === ":hidden") {
-         menu.classList.toggle("sm:visible");
-       }else {
-         menu.classList.toggle("sm:hidden");
-       }
-
-  };
-
+const evento_menu = () => {
+  const menu = document.querySelector("#menu");
+  if (menu === ":hidden") {
+    menu.classList.toggle("sm:visible");
+  } else {
+    menu.classList.toggle("sm:hidden");
+  }
+};
 
 const Navbar = () => {
-
   return (
     <header className="bg-primary">
       <nav className="flex container items-center justify-between flex-wrap p-6 mx-auto">
         <div className=" logo-container flex items-center flex-shrink-0 text-white mr-6">
-          <img className="logo" src="./logo-pizzatop.png" alt="description" />
+          <Link to="/">
+            <img className="logo" src="/logo-pizzatop.png" alt="description" />
+          </Link>
         </div>
         <div className="menu-mobile flex items-center ">
           <div className="block lg:hidden">
@@ -35,28 +33,43 @@ const Navbar = () => {
         </div>
         <div id="menu" className="w-full block flex-grow lg:flex lg:items-center lg:w-auto sm:hidden">
           <div className="text-md lg:flex-grow">
-            <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:font-bold text-white mr-4 ">
-              Menu
-            </a>
+            <ul class="menu menu-horizontal p-0">
+              <li tabindex="0">
+                <Link to="/" className="mt-4 lg:mt-0 text-white hover:font-bold text-white mr-4  ">
+                  Pizzas
+                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                  </svg>
+                </Link>
+                <ul class="p-4 bg-base-100 z-10">
+                  <li>
+                    <Link to="/categoria/eventos">Para Eventos</Link>
+                  </li>
+                  <li>
+                    <Link to="/categoria/vegetariano">Vegetariano</Link>
+                  </li>
+                  <li>
+                    <Link to="/categoria/picante">Picante</Link>
+                  </li>
+                </ul>
+              </li>
+            </ul>
             <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:font-bold text-white mr-4  ">
-              Promociones
+              <Link to="/promociones">Promociones</Link>
             </a>
             <a href="#ss" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:font-bold text-white mr-4 ">
-              Servicios Adicionales
+              <Link to="/serviciones-adicionales">Servicios Adicionales</Link>
             </a>
           </div>
           <div>
-            <a href="#sas" className=" btn btn-secondary inline-block text-sm px-10 py-4 leading-none rounded  text-neutral font-bold uppercase  mt-4 lg:mt-0">
-              Contactos
-            </a>
+            <div className=" btn btn-secondary inline-block text-sm px-10 py-4 leading-none rounded  text-neutral font-bold uppercase  mt-4 lg:mt-0">
+              <Link to="/contacto">Contactos</Link>
+            </div>
           </div>
         </div>
       </nav>
     </header>
   );
-}
-
-
-
+};
 
 export default Navbar;

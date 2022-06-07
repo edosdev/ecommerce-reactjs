@@ -2,14 +2,15 @@ import { useState, useEffect } from "react";
 import Item from "./Item";
 import productos from "../../utils/productos-mock";
 
-const ItemList = () => {
+const ItemList = ({ filtrocat }) => {
+  console.log("ejecutando filtro", filtrocat);
   const [products, setProducts] = useState([]);
   const getProducts = () => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (productos) {
           resolve(productos);
-        }else {
+        } else {
           reject("error en llamada de la API");
         }
       }, 2000);
@@ -20,8 +21,9 @@ const ItemList = () => {
   useEffect(() => {
     getProducts()
       .then((response) => {
-        // console.log("Respuesta de la Promesa: ", response);
-        setProducts(response);
+
+          setProducts(response);
+
       })
 
       .catch((err) => {
@@ -31,16 +33,18 @@ const ItemList = () => {
         // setLoader(false);
         // console.log("Cargo Todo");
       });
-  }, []);
+  }, [filtrocat]);
+
+
 
   return (
+    
     <>
-
       {products.map((producto) => {
-
-        console.log("este es el producto: ", producto);
+        // console.log("este es el producto: ", producto);
         return (
           <Item
+            id={producto.id}
             titulo={producto.titulo}
             descripcion={producto.descripcion}
             imagen={producto.imagen}
@@ -48,7 +52,7 @@ const ItemList = () => {
             stock={producto.stock}
             tamano={producto.tamano.map((t) => (
               <div className="tamano-contenedor">
-                <input class="radio radio-primary" type="radio" id={t.name} name="tamano" value={t.price}/> {t.name}
+                <input class="radio radio-primary" type="radio" id={t.name} name="tamano" value={t.price} /> {t.name}
               </div>
             ))}
           ></Item>
