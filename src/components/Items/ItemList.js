@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import Item from "./Item";
 import productos from "../../utils/productos-mock";
-import { capitalize } from "@mui/material";
+// import { capitalize } from "@mui/material";
 
 const ItemList = ({ filtrocat }) => {
   console.log("ejecutando filtro", filtrocat);
   const [products, setProducts] = useState([]);
-  const [filtroCategoria, setCategoria] = useState([]);
+  // const [filtroCategoria, setCategoria] = useState([]);
   const getProducts = () => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -24,11 +24,11 @@ const ItemList = ({ filtrocat }) => {
     getProducts()
       .then((response) => {
         // console.log("Respuesta de la Promesa: ", response);
-        if (filtrocat) {
-          setCategoria(response);
-        } else {
+        // if (filtrocat) {
+        //   setCategoria(response);
+        // } else {
           setProducts(response);
-        }
+        // }
       })
 
       .catch((err) => {
@@ -46,12 +46,12 @@ const ItemList = ({ filtrocat }) => {
     
     <>
 
-      {filtroCategoria.find(
+      {/* {filtroCategoria.find(
         // eslint-disable-next-line
         (b) => {
         // eslint-disable-next-line
         console.log(b.categoria == capitalize(filtrocat));
-      })}
+      })} */}
       {products.map((producto) => {
         // console.log("este es el producto: ", producto);
         return (
