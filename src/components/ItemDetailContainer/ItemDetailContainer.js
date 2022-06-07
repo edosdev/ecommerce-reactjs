@@ -15,6 +15,7 @@ const ItemDetailConatiner = () => {
     }
     setproduct(filtroProducto);
   });
+  
 // eslint-disable-next-line
   const filtroProducto = productos.find((producto) => {
     // eslint-disable-next-line
