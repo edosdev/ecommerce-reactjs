@@ -6,7 +6,7 @@ const ItemList = ({ filtrocat }) => {
   console.log("ejecutando filtro", filtrocat);
   const [products, setProducts] = useState([]);
   const [filtro, setCategoria] = useState([]);
- 
+
   const getProducts = () => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -39,15 +39,14 @@ const ItemList = ({ filtrocat }) => {
       });
   }, [filtrocat]);
 
-  
-    const resultadosb = filtro.filter((e) => e.categoria == filtrocat );
-    
-    console.log(resultadosb);
+  // eslint-disable-next-line
+  const resultadosb = filtro.filter((e) => e.categoria == filtrocat);
+
+  console.log(resultadosb);
 
   return (
     <>
-
-     {resultadosb.map((resultado) => {
+      {resultadosb.map((resultado) => {
         return (
           <Item
             id={resultado.id}
@@ -63,7 +62,7 @@ const ItemList = ({ filtrocat }) => {
             ))}
           ></Item>
         );
-     })}
+      })}
 
       {products.map((producto) => {
         // console.log("este es el producto: ", producto);
