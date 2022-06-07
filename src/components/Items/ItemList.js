@@ -42,7 +42,7 @@ const ItemList = ({ filtrocat }) => {
   // eslint-disable-next-line
   const resultadosb = filtro.filter((e) => e.categoria == filtrocat);
 
-  console.log(resultadosb);
+  console.log(resultadosb, "array");
 
   return (
     <>
