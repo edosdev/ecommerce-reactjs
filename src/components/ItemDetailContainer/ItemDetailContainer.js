@@ -4,24 +4,22 @@ import productos  from "../../utils/productos-mock";
 import { useParams, useNavigate } from "react-router-dom";
 
 const ItemDetailConatiner = () => {
+  const { id } = useParams();
 
-  const {id} = useParams();
-
-  const [producto, setproduct] = useState({})
+  const [producto, setproduct] = useState({});
   const navegador = useNavigate();
-  
+  // eslint-disable-next-line
   useEffect(() => {
     if (filtroProducto === undefined) {
-      navegador('/404')
+      navegador("/404");
     }
     setproduct(filtroProducto);
-  })
-
-
+  });
+// eslint-disable-next-line
   const filtroProducto = productos.find((producto) => {
+    // eslint-disable-next-line
     return producto.id == id;
   });
-
 
   // const getItem = () => {
   //   return new Promise((resolve, reject) => {
@@ -46,7 +44,7 @@ const ItemDetailConatiner = () => {
 
   return (
     <>
-      <ItemDetail data={producto}/>
+      <ItemDetail data={producto} />
     </>
   );
 };
