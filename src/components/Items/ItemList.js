@@ -40,22 +40,25 @@ const ItemList = ({ filtrocat }) => {
   }, [filtrocat]);
 
   // eslint-disable-next-line
-  const resultadosb = filtro.filter((e) => e.categoria == filtrocat);
-
-  console.log(resultadosb, "array");
+let r = filtro.filter((p) => {
+  let categorias = p.categoria;
+  if (categorias.includes("eventos")) {
+    return p;
+  }
+});
 
   return (
     <>
-      {resultadosb.map((resultado) => {
+      {r.map((resultadof) => {
         return (
           <Item
-            id={resultado.id}
-            titulo={resultado.titulo}
-            descripcion={resultado.descripcion}
-            imagen={resultado.imagen}
-            precio_final={resultado.precio_final}
-            stock={resultado.stock}
-            tamano={resultado.tamano.map((t) => (
+            id={resultadof.id}
+            titulo={resultadof.titulo}
+            descripcion={resultadof.descripcion}
+            imagen={resultadof.imagen}
+            precio_final={resultadof.precio_final}
+            stock={resultadof.stock}
+            tamano={resultadof.tamano.map((t) => (
               <div className="tamano-contenedor">
                 <input class="radio radio-primary" type="radio" id={t.name} name="tamano" value={t.price} /> {t.name}
               </div>
