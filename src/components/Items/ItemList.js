@@ -42,7 +42,7 @@ const ItemList = ({ filtrocat }) => {
   // eslint-disable-next-line
 let r = filtro.filter((p) => {
   let categorias = p.categoria;
-  if (categorias.includes("eventos")) {
+  if (categorias.includes({ filtrocat })) {
     return p;
   }
 });
