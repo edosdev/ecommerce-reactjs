@@ -6,11 +6,11 @@ elaboración tienda virtual, compuesto con base de colores persolizado para el m
 
 ## Paleta de Colores
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](/readme-img/palette-readme.png)
 
 ## Usando Link Internos 
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](/readme-img/readme-pecommerce-links.gif)
 
 
 ## Instalacion
