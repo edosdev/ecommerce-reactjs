@@ -2,8 +2,13 @@
 import React, { useState } from "react";
 
 const ItemCount = ({stock, initial}) => {
- 
+
   const [count, setCount] = useState(initial);
+
+  function stockSelec(selected) {
+     let ss;
+     return ss +=  selected
+  }
 
   const decremento = () => {
     if (count > 0) {
@@ -18,8 +23,9 @@ const ItemCount = ({stock, initial}) => {
   };
     const onAdd = () => {
       console.log(" Se agrego el Producto la cantidad de " + count);
+      return stockSelec(count);
     };
-
+stockSelec();
   return (
     <>
       <div className="card-actions justify-between items-center mt-5">
@@ -41,4 +47,6 @@ const ItemCount = ({stock, initial}) => {
   );
 };
 
+
 export default ItemCount;
+

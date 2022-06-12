@@ -1,6 +1,7 @@
 import './App.css';
 import './index.css'
 import Navbar from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Contacto from "./pages/Contacto";
@@ -30,6 +31,7 @@ function App() {
             <Route exact path="/serviciones-adicionales" element={<ServiciosAdicionales />}></Route>
           </Routes>
         </div>
+        <Footer/>
       </BrowserRouter>
     </div>
   );
