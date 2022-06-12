@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({stock, initial, rcantidads}) => {
  
   const [count, setCount] = useState(initial);
 
@@ -18,6 +18,7 @@ const ItemCount = ({stock, initial}) => {
   };
     const onAdd = () => {
       console.log(" Se agrego el Producto la cantidad de " + count);
+      return rcantidads = count;
     };
 
   return (
