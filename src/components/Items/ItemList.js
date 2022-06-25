@@ -3,7 +3,7 @@ import Item from "./Item";
 import productos from "../../utils/productos-mock";
 
 const ItemList = ({ filtrocat }) => {
-  console.log("ejecutando filtro", filtrocat);
+  // console.log("ejecutando filtro", filtrocat);
   const [products, setProducts] = useState([]);
   const [filtro, setCategoria] = useState([]);
 
