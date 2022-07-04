@@ -1,10 +1,13 @@
 import './item.css'
 import ItemCount from "./ItemCount";
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import  CartContext  from '../../context/CartContext';
+import { useContext } from 'react';
 
 const Item = ({ id, titulo, descripcion, imagen, precio_final, stock, tamano }) => {
-
   // console.log("el id de producto", id)
+  // eslint-disable-next-line
+  const { addProductCart } = useContext(CartContext);
 
   return (
     <div className="card w-100 bg-base-100 shadow-xl">
