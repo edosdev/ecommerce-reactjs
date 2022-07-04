@@ -1,9 +1,6 @@
 import "./Navbar.css";
 import CartWidget from "../Cart/CarWidget.js";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { ThemeContext } from "../../context/ThemeContext";
-import ThemeSwitch from "./ThemeSwitch";
 
 const evento_menu = () => {
   const menu = document.querySelector("#menu");
@@ -15,7 +12,6 @@ const evento_menu = () => {
 };
 
 const Navbar = () => {
-  const { temaOscuro } = useContext(ThemeContext);
   // console.log("state conext desde el navbar", temaOscuro);
   return (
     <header className="bg-primary">

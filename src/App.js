@@ -10,14 +10,12 @@ import ServiciosAdicionales from "./pages/Serviciones_Adicionales";
 import NoEncotrado from "./pages/404";
 import DetalleProducto from './pages/DetalleProducto'
 import Categoria from "./pages/Categoria"
-import ThemeProvider from "./context/ThemeContext";
 import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
     <div className="App">
       <CartProvider>
-        <ThemeProvider>
           <BrowserRouter>
             <Navbar />
             <div className="container mx-auto mt-4 mb-10">
@@ -34,7 +32,6 @@ function App() {
             </div>
             <Footer />
           </BrowserRouter>
-        </ThemeProvider>
       </CartProvider>
     </div>
   );
