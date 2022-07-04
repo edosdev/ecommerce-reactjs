@@ -1,6 +1,6 @@
 import "./Navbar.css";
 import CartWidget from "../Cart/CarWidget.js";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 const evento_menu = () => {
   const menu = document.querySelector("#menu");
