@@ -1,6 +1,5 @@
 import "./CartWidget.css";
 import { ShoppingCartIcon } from "@heroicons/react/outline";
-import { useState } from "react";
 import { Icon } from "@iconify/react";
 import CartContext from "../../context/CartContext";
 import { useContext } from "react";

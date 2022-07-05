@@ -11,7 +11,7 @@ const Item = ({ id, titulo, descripcion, imagen, precio_final, stock, tamano }) 
   const { addProductCart } = useContext(CartContext);
 
   const [contador, setContador] = useState(1);
-  
+  // eslint-disable-next-line
   const [precioSelect, setprecioSelect] = useState(precio_final);
 
   const data = { id, titulo, descripcion, imagen, contador, precioSelect }; // envia al carrito
