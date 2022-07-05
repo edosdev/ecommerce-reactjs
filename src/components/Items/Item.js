@@ -2,12 +2,25 @@ import './item.css'
 import ItemCount from "./ItemCount";
 import {Link} from 'react-router-dom';
 import  CartContext  from '../../context/CartContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 const Item = ({ id, titulo, descripcion, imagen, precio_final, stock, tamano }) => {
   // console.log("el id de producto", id)
   // eslint-disable-next-line
+
   const { addProductCart } = useContext(CartContext);
+
+  const [contador, setContador] = useState(1);
+  
+  const [precioSelect, setprecioSelect] = useState(precio_final);
+
+  const data = { id, titulo, descripcion, imagen, contador, precioSelect }; // envia al carrito
+
+  const onAdd = (e) => {
+    e.preventDefault();
+    addProductCart({ ...data });
+    console.log(contador);
+  };
 
   return (
     <div className="card w-100 bg-base-100 shadow-xl">
@@ -27,7 +40,13 @@ const Item = ({ id, titulo, descripcion, imagen, precio_final, stock, tamano }) 
             <span>{precio_final}</span>
           </div>
         </div>
-        <ItemCount stock={stock} initial={1} />
+        <div className="card-actions justify-between items-center mt-5">
+          <ItemCount stock={stock} initial={1} actualizar={setContador} conteo={contador} />
+          <button className="btn btn-primary text-white" onClick={onAdd}>
+            Agregar al Carrito
+          </button>
+        </div>
+
         <div className=" text-neutral font-bold mt-4">
           <Link to={`/producto/${id}`}>Ver Mas Información</Link>
         </div>
