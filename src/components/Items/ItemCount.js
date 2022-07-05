@@ -1,8 +1,10 @@
-
+import  CartContext  from '../../context/CartContext';
+import { useContext } from 'react';
 import React, { useState } from "react";
 
-const ItemCount = ({stock, initial}) => {
-
+const ItemCount = ({stock, initial, producto}) => {
+  
+  const { addProductCart } = useContext(CartContext);
   const [count, setCount] = useState(initial);
 
   function stockSelec(selected) {
@@ -23,6 +25,7 @@ const ItemCount = ({stock, initial}) => {
   };
     const onAdd = () => {
       console.log(" Se agrego el Producto la cantidad de " + count);
+      addProductCart({...producto})
       return stockSelec(count);
     };
 stockSelec();

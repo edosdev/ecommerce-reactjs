@@ -2,11 +2,15 @@ import  './CartWidget.css';
 import { ShoppingCartIcon } from "@heroicons/react/outline";
 import { useState } from 'react';
 import { Icon } from "@iconify/react";
+import  CartContext  from '../../context/CartContext';
+import { useContext } from 'react';
+
 
 
 const CartWidget = () => {
   // eslint-disable-next-line
   const [cart, setCart] = useState([]);
+  const { cartListItems } = useContext(CartContext);
 
   return (
     <div className=" cart-container ml-10 mr-5">
@@ -24,6 +28,13 @@ const CartWidget = () => {
           <img src="/img-pizzas/p-diabla.jpg" class="" alt="" />
           <div className="item-info">
             <p>Producto</p>
+            {cartListItems.map((item) =>{
+
+              return(
+                <p>{console.log("titulo desde cart: ", item.titulo)}</p>
+
+              )
+            })}
             <span className="Cantidad">
               1 <b>X</b>
             </span>
