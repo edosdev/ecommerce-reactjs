@@ -2,3 +2,10 @@ figure img {
   height: 280px;
   width: 100%;
 }
+
+.precio-desde::before {
+  content: "Desde ";
+  color: #BF0615 ;
+  font-size: 1.5rem;
+  font-weight: bold;
+}

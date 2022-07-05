@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Item from "./Item";
 import productos from "../../utils/productos-mock";
+import './item.css';
 
 const ItemList = ({ filtrocat }) => {
   // console.log("ejecutando filtro", filtrocat);
@@ -68,6 +69,16 @@ let r = filtro.filter((p) => {
       })}
 
       {products.map((producto) => {
+                    let precioInicial = producto.precio_final;
+                    
+                    (() => {
+                      const precioDesde = producto.tamano[0].price;
+                      return (precioInicial = <div className="precio-desde">{precioDesde}</div>);
+                    })();
+
+                    function onTamano(precio) {
+                      return console.log((precioInicial = precio));
+                    }
         // console.log("este es el producto: ", producto);
         return (
           <Item
@@ -75,11 +86,11 @@ let r = filtro.filter((p) => {
             titulo={producto.titulo}
             descripcion={producto.descripcion}
             imagen={producto.imagen}
-            precio_final={producto.precio_final}
+            precio_final={precioInicial}
             stock={producto.stock}
             tamano={producto.tamano.map((t) => (
               <div className="tamano-contenedor">
-                <input class="radio radio-primary" type="radio" id={t.name} name="tamano" value={t.price} /> {t.name}
+                <input class="radio radio-primary" type="radio" id={t.name} name="tamano" value={t.price} onClick={() => onTamano(t.price)} /> {t.name}
               </div>
             ))}
           ></Item>
