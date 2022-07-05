@@ -7,6 +7,7 @@ const ItemList = ({ filtrocat }) => {
   // console.log("ejecutando filtro", filtrocat);
   const [products, setProducts] = useState([]);
   const [filtro, setCategoria] = useState([]);
+  const [selected, setSelected] = useState();
 
   const getProducts = () => {
     return new Promise((resolve, reject) => {
@@ -48,6 +49,8 @@ let r = filtro.filter((p) => {
   }
 });
 
+
+
   return (
     <>
       {r.map((resultadof) => {
@@ -61,7 +64,7 @@ let r = filtro.filter((p) => {
             stock={resultadof.stock}
             tamano={resultadof.tamano.map((t) => (
               <div className="tamano-contenedor">
-                <input class="radio radio-primary" type="radio" id={t.name} name="tamano" value={t.price} /> {t.name}
+                <input class="radio radio-primary" type="radio" id={t.name} name="tamano" value={t.price}/> {t.name}
               </div>
             ))}
           ></Item>
@@ -76,9 +79,12 @@ let r = filtro.filter((p) => {
                       return (precioInicial = <div className="precio-desde">{precioDesde}</div>);
                     })();
 
-                    function onTamano(precio) {
-                      return console.log((precioInicial = precio));
-                    }
+  const handleChange = (event) => {
+    console.log(event.target.value);
+    setSelected(event.target.value);
+    precioInicial = 0;
+   return precioInicial = selected;
+  };
         // console.log("este es el producto: ", producto);
         return (
           <Item
@@ -90,7 +96,7 @@ let r = filtro.filter((p) => {
             stock={producto.stock}
             tamano={producto.tamano.map((t) => (
               <div className="tamano-contenedor">
-                <input class="radio radio-primary" type="radio" id={t.name} name="tamano" value={t.price} onClick={() => onTamano(t.price)} /> {t.name}
+                <input class="radio radio-primary" type="radio" id={t.name} name="tamano" value={t.price} onClick={handleChange} /> {t.name}
               </div>
             ))}
           ></Item>
