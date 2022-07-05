@@ -12,7 +12,7 @@ const ItemDetail = ({ data, ptamano }) => {
           <h1 className="text-2xl font-extrabold">{data.titulo}</h1>
           <p>{data.descripcion}</p>
           <price> {data.precio_final}</price>
-          <ItemCount stock={data.stock} initial={1} />
+          <ItemCount stock={data.stock} initial={1} producto={data}/>
           {ptamano}
         </div>
       </div>
