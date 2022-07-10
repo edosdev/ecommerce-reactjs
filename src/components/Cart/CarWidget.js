@@ -32,7 +32,7 @@ const CartWidget = () => {
                 <span className="Cantidad">
                   {item.contador} <b>X</b>
                 </span>
-                <span>{item.precioSelect}</span>
+                <span>{item.precioSelecionado}</span>
                 <span>
                   <Icon icon="bx:trash" width="24" hFlip={true} />
                 </span>

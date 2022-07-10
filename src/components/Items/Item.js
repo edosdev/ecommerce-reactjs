@@ -1,8 +1,9 @@
-import './item.css'
+import "./item.css";
 import ItemCount from "./ItemCount";
-import {Link} from 'react-router-dom';
-import  CartContext  from '../../context/CartContext';
-import { useContext, useState } from 'react';
+import ItemSize from "./ItemSize";
+import { Link } from "react-router-dom";
+import CartContext from "../../context/CartContext";
+import { useContext, useState } from "react";
 
 const Item = ({ id, titulo, descripcion, imagen, precio_final, stock, tamano }) => {
   // console.log("el id de producto", id)
@@ -11,15 +12,35 @@ const Item = ({ id, titulo, descripcion, imagen, precio_final, stock, tamano }) 
   const { addProductCart } = useContext(CartContext);
 
   const [contador, setContador] = useState(1);
-  // eslint-disable-next-line
-  const [precioSelect, setprecioSelect] = useState(precio_final);
 
-  const data = { id, titulo, descripcion, imagen, contador, precioSelect }; // envia al carrito
+  const [select, setSelec] = useState();
+  const [precioSelecionado, setprecioSelecionado] = useState(select);
+
+  // eslint-disable-next-line
+  let precioSelect = () => {
+    if (!select) {
+      const precioDesde = precio_final.price;
+      let desde = <div className="precio-desde">${precioDesde}</div>;
+      return desde;
+    } else {
+      return select;
+    }
+  };
+
+  function verificarSelecion(e) {
+    if (e === undefined) {
+      setprecioSelecionado(precio_final.price);
+    }
+  }
+
+  // me da resultado precio selecionado para el carrito en tipo numbers
+
+  const data = { id, titulo, descripcion, imagen, contador, precioSelecionado }; // envia al carrito
 
   const onAdd = (e) => {
     e.preventDefault();
     addProductCart({ ...data });
-    console.log(contador);
+    // console.log(contador);
   };
 
   return (
@@ -34,10 +55,10 @@ const Item = ({ id, titulo, descripcion, imagen, precio_final, stock, tamano }) 
         <p className="text-left">{descripcion}</p>
         <div class="flex w-100">
           <form className="text-left w-3/5" method="post" action>
-            {tamano}
+            <ItemSize tamanos={tamano} seleccionado={setSelec} />
           </form>
           <div className="precio text-right w-2/5">
-            <span>{precio_final}</span>
+            <span>{precioSelect()}</span>
           </div>
         </div>
         <div className="card-actions justify-between items-center mt-5">

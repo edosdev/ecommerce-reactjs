@@ -7,7 +7,7 @@ const ItemList = ({ filtrocat }) => {
   // console.log("ejecutando filtro", filtrocat);
   const [products, setProducts] = useState([]);
   const [filtro, setCategoria] = useState([]);
-  const [selected, setSelected] = useState();
+
 
   const getProducts = () => {
     return new Promise((resolve, reject) => {
@@ -62,29 +62,13 @@ let r = filtro.filter((p) => {
             imagen={resultadof.imagen}
             precio_final={resultadof.precio_final}
             stock={resultadof.stock}
-            tamano={resultadof.tamano.map((t) => (
-              <div className="tamano-contenedor">
-                <input class="radio radio-primary" type="radio" id={t.name} name="tamano" value={t.price}/> {t.name}
-              </div>
-            ))}
+            tamano={resultadof.tamano}
           ></Item>
         );
       })}
 
       {products.map((producto) => {
-                    let precioInicial = producto.precio_final;
-                    
-                    (() => {
-                      const precioDesde = producto.tamano[0].price;
-                      return (precioInicial = <div className="precio-desde">{precioDesde}</div>);
-                    })();
 
-  const handleChange = (event) => {
-    console.log(event.target.value);
-    setSelected(event.target.value);
-    precioInicial = 0;
-   return precioInicial = selected;
-  };
         // console.log("este es el producto: ", producto);
         return (
           <Item
@@ -92,13 +76,9 @@ let r = filtro.filter((p) => {
             titulo={producto.titulo}
             descripcion={producto.descripcion}
             imagen={producto.imagen}
-            precio_final={precioInicial}
+            precio_final={producto.tamano[0]}
             stock={producto.stock}
-            tamano={producto.tamano.map((t) => (
-              <div className="tamano-contenedor">
-                <input class="radio radio-primary" type="radio" id={t.name} name="tamano" value={t.price} onClick={handleChange} /> {t.name}
-              </div>
-            ))}
+            tamano={producto.tamano}
           ></Item>
         );
       })}
