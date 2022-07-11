@@ -13,8 +13,8 @@ const Item = ({ id, titulo, descripcion, imagen, precio_final, stock, tamano }) 
 
   const [contador, setContador] = useState(1);
 
-  const [select, setSelec] = useState();
-  const [precioSelecionado, setprecioSelecionado] = useState(select);
+  const [select, setSelec] = useState(0);
+  const precioSelecionado = Number(select);
 
   // eslint-disable-next-line
   let precioSelect = () => {
@@ -24,14 +24,9 @@ const Item = ({ id, titulo, descripcion, imagen, precio_final, stock, tamano }) 
       return desde;
     } else {
       return select;
-    }
+    };
   };
 
-  function verificarSelecion(e) {
-    if (e === undefined) {
-      setprecioSelecionado(precio_final.price);
-    }
-  }
 
   // me da resultado precio selecionado para el carrito en tipo numbers
 
