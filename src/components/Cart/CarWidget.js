@@ -6,9 +6,11 @@ import { useContext } from "react";
 
 const CartWidget = () => {
   // eslint-disable-next-line
-  const { cartListItems } = useContext(CartContext);
+  const { cartItems, deleteItemToCart } = useContext(CartContext);
 
-
+  const removeProduct = () => {
+      console.log("Removing product ");
+  }
 
   return (
     <div className=" cart-container ml-10 mr-5">
@@ -23,7 +25,7 @@ const CartWidget = () => {
         {/* END Carrito Vacio */}
 
         {/* Item */}
-        {cartListItems.map((item) => {
+        {cartItems.map((item) => {
           return (
             <div className="item-widgetCard mb-2">
               <img src={item.imagen} class="" alt="" />
@@ -34,7 +36,9 @@ const CartWidget = () => {
                 </span>
                 <span>{item.precioSelecionado}</span>
                 <span>
-                  <Icon icon="bx:trash" width="24" hFlip={true} />
+                  <button onClick={deleteItemToCart(item)}>
+                    <Icon icon="bx:trash" width="24" hFlip={true} />
+                  </button>
                 </span>
               </div>
             </div>

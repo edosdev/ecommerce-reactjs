@@ -9,7 +9,7 @@ const Item = ({ id, titulo, descripcion, imagen, precio_final, stock, tamano }) 
   // console.log("el id de producto", id)
   // eslint-disable-next-line
 
-  const { addProductCart } = useContext(CartContext);
+  const { addItemToCart } = useContext(CartContext);
 
   const [contador, setContador] = useState(1);
 
@@ -34,7 +34,9 @@ const Item = ({ id, titulo, descripcion, imagen, precio_final, stock, tamano }) 
 
   const onAdd = (e) => {
     e.preventDefault();
-    addProductCart({ ...data });
+
+          addItemToCart({ ...data });
+
     // console.log(contador);
   };
 
@@ -62,7 +64,9 @@ const Item = ({ id, titulo, descripcion, imagen, precio_final, stock, tamano }) 
             Agregar al Carrito
           </button>
         </div>
+        <div  className="notificacion">
 
+        </div>
         <div className=" text-neutral font-bold mt-4">
           <Link to={`/producto/${id}`}>Ver Mas Información</Link>
         </div>
